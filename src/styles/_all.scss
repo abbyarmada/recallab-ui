@@ -1,0 +1,22 @@
+@import "bourbon";
+@import "megatype";
+@import "config/_config.scss";
+@import "components/_all.scss";
+
+h1 {
+   font-size: golden-ratio(14px,  1);
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1; /* ie 6/7 */
+}
