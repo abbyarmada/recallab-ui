@@ -26,7 +26,8 @@ const config = {
       path.resolve(__dirname, './src/styles/'),
       bourbon,
       bourbonNeat,
-      './node_modules/megatype/'
+      './node_modules/megatype/',
+      './node_modules/normalize-scss/sass/'
     ]
   },
   module: {

@@ -10,20 +10,23 @@ import DeckView from '../deck/single/index.jsx';
 import CardEdit from '../card/edit.jsx';
 import Login from '../login/index.jsx';
 import { Router, Route, hashHistory } from 'react-router';
-import Routes from '../router/index.jsx';
-import Shell from '../shell/index.jsx';
+import App from '../app/index.jsx';
 
-
-class App extends React.Component {
+class Routes extends React.Component {
   render() {
     return (
-      <Shell>
-        <ContentWrapper>
-          {this.props.children}
-        </ContentWrapper>
-      </Shell>
+      <Router history={hashHistory}>
+        <Route path="/" component={App}>
+          {/* add the routes here */}
+          <Route path="/deck" component={Decks}>
+            <Route path="/deck/:deckId" component={DeckView} />
+          </Route>
+        </Route>
+      </Router>
     );
   }
 }
 
-export default App;
+export default Routes;
+
+

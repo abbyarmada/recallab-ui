@@ -1,0 +1,24 @@
+.card-controlls {
+  position: absolute;
+  bottom: 15px;
+  width: 145px;
+  border: 1px solid black;
+  height: 30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.card-previous {
+  display: inline;
+}
+
+.card-next {
+  display: inline-block;
+}
+
+.card-show-answer {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+}

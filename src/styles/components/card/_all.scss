@@ -1,0 +1,16 @@
+@import '_answer.scss';
+@import '_question.scss';
+@import '_controlls.scss';
+
+.card {
+  min-width: 500px;
+  min-height: 400px;
+  border: 1px solid black;
+  position: absolute;
+  top: 89px;
+  bottom: 64px;
+  left: 87px;
+  right: 25px;
+  margin: auto;
+  text-align: center;
+}
