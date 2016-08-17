@@ -20,6 +20,9 @@ const config = {
   entry: {
     app: ['./src/js/index.jsx']
   },
+  devServer: {
+    historyApiFallback: true
+  },
   devtool: debug ? "inline-sourcemap" : null,
   sassLoader: {
     includePaths: [
@@ -35,7 +38,7 @@ const config = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: 'babel'
+        loader: 'babel'
       },
       {
         test: /.jsx?$/,
