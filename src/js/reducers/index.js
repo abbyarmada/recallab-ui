@@ -1,10 +1,5 @@
-/**
- * Generate new game state with new random secret code
- *
- * @param  {object} config
- *
- * @return {object}
- */
+import * as ActionTypes from '../constants/ActionTypes';
+
 const getNewStore = (config) => ({
   user: {},
   decks: []
@@ -12,7 +7,7 @@ const getNewStore = (config) => ({
 
 export default function recallab(state = getNewStore({}), action) {
   switch (action.type) {
-    case 'LOAD_STORE':
+    case ActionTypes.LOAD_STORE:
       return getNewStore();
 
     default:

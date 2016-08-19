@@ -1,10 +1,8 @@
 import React, { PropTypes } from 'react';
 import Shell from '../../shell/index.jsx';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
+import { withRouter, Link } from 'react-router';
 import ContentWrapper from '../../content-wrapper/index.jsx';
-import { Link } from 'react-router';
-
 
 class Decks extends React.Component {
   render() {
