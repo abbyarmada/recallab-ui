@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 import recallab from './reducers/index';
@@ -11,8 +11,10 @@ const configureStore = () => {
 
   return createStore(
     recallab,
-    applyMiddleware(...middlewares),
-    window.devToolsExtension && window.devToolsExtension()
+    compose(
+      applyMiddleware(...middlewares),
+      window.devToolsExtension ? window.devToolsExtension() : f => f
+    )
   );
 };
 

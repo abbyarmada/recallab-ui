@@ -3,19 +3,31 @@ import Shell from '../../shell/index.jsx';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router';
 import ContentWrapper from '../../content-wrapper/index.jsx';
+import { getDecks } from '../../../reducers/index.js';
+import * as actions from '../../../actions';
+import Deck from './deck.jsx';
 
 class Decks extends React.Component {
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData() {
+    const { fetchDecks } = this.props;
+    fetchDecks();
+  }
+
   render() {
     return (
       <div className="decks clearfix">
         <h1>Your decks:</h1>
         <ul>
-          <li><Link to="/deck/1">Deck 1</Link> |<Link to="/deck/edit/1">Edit</Link></li>
-          <li><Link to="/deck/edit/2">Deck 2</Link></li>
-          <li><a href="/deck/3">Deck 3</a></li>
-          <li><a href="/deck/4">Deck 4</a></li>
-          <li><a href="/deck/5">Deck 5</a></li>
-          <li><a href="/deck/6">Deck 6</a></li>
+        {this.props.decks.map(deck =>
+          <Deck
+            key = {deck.id}
+            {...deck}
+          />
+        )}
         </ul>
         {this.props.children}
       </div>
@@ -23,11 +35,22 @@ class Decks extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    decks: getDecks(state)
+  };
+};
+
 Decks.propTypes = {
   decks: PropTypes.array.isRequired,
-  children: PropTypes.node
+  children: PropTypes.node,
+  fetchDecks: PropTypes.func.isRequired
 };
 
 
+Decks = withRouter(connect(
+  mapStateToProps,
+  actions
+)(Decks));
 
 export default Decks;

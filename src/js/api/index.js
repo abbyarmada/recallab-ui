@@ -2,7 +2,7 @@ export const fetchDecks = () => (
   [
     {
       id: 1,
-      name: 'Deck 1'
+      name: 'Deck A'
     },
     {
       id: 2,
