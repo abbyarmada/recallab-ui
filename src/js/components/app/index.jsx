@@ -10,9 +10,7 @@ import DeckView from '../deck/single/index.jsx';
 import CardEdit from '../card/edit.jsx';
 import Login from '../login/index.jsx';
 import { Router, Route, hashHistory } from 'react-router';
-import Routes from '../router/index.jsx';
 import Shell from '../shell/index.jsx';
-
 
 class App extends React.Component {
   render() {
