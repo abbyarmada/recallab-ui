@@ -24,12 +24,11 @@ const UserIsAuthenticated = UserAuthWrapper({
   redirectAction: routerActions.replace, // the redux action to dispatch for redirect
   wrapperDisplayName: 'UserIsAuthenticated', // a nice name for this auth check
   failureRedirectPath: '/',
-  allowRedirectBack: false
+  allowRedirectBack: false,
+  predicate: user => user.idToken
 });
 
 const Authenticated = UserIsAuthenticated((props) => props.children);
-
-
 
 class Root extends React.Component {
   render() {

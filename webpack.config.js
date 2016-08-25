@@ -113,7 +113,8 @@ const config = {
     new webpack.DefinePlugin({
       'process.env': {
         'RECALLAB_AUTH0_CLIENTID': JSON.stringify(process.env.RECALLAB_AUTH0_CLIENTID),
-        'RECALLAB_AUTH0_DOMAIN': JSON.stringify(process.env.RECALLAB_AUTH0_DOMAIN)
+        'RECALLAB_AUTH0_DOMAIN': JSON.stringify(process.env.RECALLAB_AUTH0_DOMAIN),
+        'RECALLAB_API_URL': JSON.stringify(process.env.RECALLAB_API_URL)
       }
     })
   ] : [
@@ -136,7 +137,8 @@ const config = {
       'process.env': {
         'NODE_ENV': JSON.stringify('production'),
         'RECALLAB_AUTH0_CLIENTID': JSON.stringify(process.env.RECALLAB_AUTH0_CLIENTID),
-        'RECALLAB_AUTH0_DOMAIN': JSON.stringify(process.env.RECALLAB_AUTH0_DOMAIN)
+        'RECALLAB_AUTH0_DOMAIN': JSON.stringify(process.env.RECALLAB_AUTH0_DOMAIN),
+        'RECALLAB_API_URL': JSON.stringify(process.env.RECALLAB_API_URL)
       }
     })
   ],

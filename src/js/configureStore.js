@@ -9,9 +9,9 @@ import { browserHistory } from 'react-router';
 const configureStore = () => {
   const middlewares = [thunk];
   const routingMiddleware = routerMiddleware(browserHistory);
+  middlewares.push(routingMiddleware);
   if (process.env.NODE_ENV !== 'production') {
     middlewares.push(createLogger());
-    middlewares.push(routingMiddleware);
   }
 
   return createStore(

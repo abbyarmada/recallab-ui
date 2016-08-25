@@ -12,7 +12,13 @@ var configSettings = {
     env: 'RECALLAB_AUTH0_DOMAIN',
     type: 'string',
     required: true
+  },
+  api_url: {
+    env: 'RECALLAB_API_URL',
+    type: 'string',
+    required: true
   }
+
 };
 
 const cfg = config(configSettings);
