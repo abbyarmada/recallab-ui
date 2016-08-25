@@ -30,7 +30,7 @@ function user(state = {}, action) {
       return state;
   }
 }
-function decks(state = {}, action) {
+function decks(state = [], action) {
   switch (action.type) {
     case ActionTypes.LOAD_STORE:
       return getNewStore();
@@ -50,4 +50,4 @@ const recallab = combineReducers({
 
 export default recallab;
 
-export const getDecks = (state) => fetchDecks();
+export const getDecks = (state) => state.decks;

@@ -1,32 +1,12 @@
+import axios from 'axios';
+import { fetchDecksAction } from '../actions/index';
+
 export const fetchDecks = () => (
-  [
-    {
-      id: 1,
-      name: 'Deck A'
-    },
-    {
-      id: 2,
-      name: 'Deck 2'
-    },
-    {
-      id: 3,
-      name: 'Deck 3'
-    },
-    {
-      id: 4,
-      name: 'Deck 4'
-    },
-    {
-      id: 5,
-      name: 'Deck 5'
-    },
-    {
-      id: 6,
-      name: 'Deck 6'
-    },
-    {
-      id: 7,
-      name: 'Deck 7'
-    },
-  ]
+  axios.get('/decks/all')
+    .then(function(response) {
+      fetchDecksAction(response);
+    })
+    .catch(function(response) {
+      console.log(response);
+    })
 );

@@ -5,6 +5,8 @@ import Logout from '../auth/Logout.jsx';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router';
 import queryString from 'query-string';
+import axios from 'axios';
+import config from '../../config';
 
 class Welcome extends React.Component {
   componentWillMount() {
@@ -13,6 +15,8 @@ class Welcome extends React.Component {
       const parsed = queryString.parse(location.hash);
       dispatch(lockSuccess(parsed.access_token, parsed.id_token, parsed.token_type));
       this.context.router.push('/');
+      axios.defaults.baseURL = config.api_url;
+      axios.defaults.headers.common['Authorization'] = `Bearer ${parsed.id_token}`;
     }
   }
 

@@ -6,6 +6,7 @@ import ContentWrapper from '../../content-wrapper/index.jsx';
 import { getDecks } from '../../../reducers/index.js';
 import * as actions from '../../../actions';
 import Deck from './deck.jsx';
+import * as api from '../../../api/index.js';
 
 class Decks extends React.Component {
   componentDidMount() {
@@ -14,7 +15,7 @@ class Decks extends React.Component {
 
   fetchData() {
     const { fetchDecks } = this.props;
-    fetchDecks();
+    api.fetchDecks();
   }
 
   render() {
@@ -44,13 +45,11 @@ const mapStateToProps = (state) => {
 Decks.propTypes = {
   decks: PropTypes.array.isRequired,
   children: PropTypes.node,
-  fetchDecks: PropTypes.func.isRequired
 };
 
 
 Decks = withRouter(connect(
-  mapStateToProps,
-  actions
+  mapStateToProps
 )(Decks));
 
 export default Decks;
