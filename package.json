@@ -29,6 +29,7 @@
   "author": "Stefan Vatov",
   "license": "MIT",
   "dependencies": {
+    "12factor-config": "^1.2.1",
     "auth0-lock": "^10.2.1",
     "autoprefixer": "^6.3.6",
     "babel-core": "^6.9.1",

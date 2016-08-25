@@ -1,4 +1,6 @@
 import Auth0Lock from 'auth0-lock';
+import config from '../config';
+
 // There are two possible states for our login
 // process and we need actions for each of them.
 //
@@ -25,7 +27,7 @@ export function lockSuccess(accessToken, idToken, tokenType) {
 // Opens the Lock widget and
 // dispatches actions along the way
 export function login() {
-  const lock = new Auth0Lock('', '');
+  const lock = new Auth0Lock(config.auth0_client_id, config.auth0_domain);
   return dispatch => {
     lock.show((err, profile, token) => {});
   };

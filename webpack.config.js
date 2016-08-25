@@ -109,6 +109,12 @@ const config = {
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'RECALLAB_AUTH0_CLIENTID': JSON.stringify(process.env.RECALLAB_AUTH0_CLIENTID),
+        'RECALLAB_AUTH0_DOMAIN': JSON.stringify(process.env.RECALLAB_AUTH0_DOMAIN)
+      }
     })
   ] : [
     new HtmlWebpackPlugin({
@@ -128,7 +134,9 @@ const config = {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+        'NODE_ENV': JSON.stringify('production'),
+        'RECALLAB_AUTH0_CLIENTID': JSON.stringify(process.env.RECALLAB_AUTH0_CLIENTID),
+        'RECALLAB_AUTH0_DOMAIN': JSON.stringify(process.env.RECALLAB_AUTH0_DOMAIN)
       }
     })
   ],
