@@ -114,7 +114,9 @@ const config = {
     new HtmlWebpackPlugin({
       template: 'src/index.ejs', // Load a custom template (ejs by default but can be changed)
     }),
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin('styles.css', {
+      allChunks: true
+    }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
@@ -123,6 +125,11 @@ const config = {
       jQuery: "jquery",
       "window.jQuery": "jquery",
       "window.Tether": 'tether'
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
     })
   ],
   postcss: [

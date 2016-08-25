@@ -4,7 +4,7 @@
   "description": "Frontend for recallab.",
   "main": "src/js/index.js",
   "scripts": {
-    "build": "rm -rf build/*.* && webpack",
+    "build": "rm -rf build/*.* && NODE_ENV=production webpack -p",
     "dev": "webpack-dev-server --progress --colors --hot --inline --module-bind",
     "regenerate": "rm -rf node_modules && npm install"
   },
