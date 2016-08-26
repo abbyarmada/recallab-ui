@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class CardEdit extends React.Component {
   render() {
     return (

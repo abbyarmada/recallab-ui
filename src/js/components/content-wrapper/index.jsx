@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class ContentWrapper extends React.Component {
   render() {
     return (

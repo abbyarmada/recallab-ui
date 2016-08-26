@@ -1,10 +1,7 @@
 import React, { PropTypes } from 'react';
-import Shell from '../../shell/index.jsx';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router';
-import ContentWrapper from '../../content-wrapper/index.jsx';
 import { getDecks } from '../../../reducers/index.js';
-import * as actions from '../../../actions';
 import Deck from './deck.jsx';
 import * as api from '../../../api/index.js';
 
@@ -14,7 +11,6 @@ class Decks extends React.Component {
   }
 
   fetchData() {
-    const { fetchDecks } = this.props;
     api.fetchDecks();
   }
 
@@ -36,11 +32,9 @@ class Decks extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    decks: getDecks(state)
-  };
-};
+const mapStateToProps = (state) => ({
+  decks: getDecks(state)
+});
 
 Decks.propTypes = {
   decks: PropTypes.array.isRequired,

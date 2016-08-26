@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class CardControlls extends React.Component {
   render() {
     return (

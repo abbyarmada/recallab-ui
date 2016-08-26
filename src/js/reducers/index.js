@@ -32,8 +32,6 @@ function user(state = {}, action) {
 }
 function decks(state = [], action) {
   switch (action.type) {
-    case ActionTypes.LOAD_STORE:
-      return getNewStore();
     case ActionTypes.FETCH_DECKS_SUCCESS:
       return fetchedDecks(state, action);
 
