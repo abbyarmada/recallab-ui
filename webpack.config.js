@@ -13,7 +13,8 @@ const APP_DIR = path.resolve(__dirname, 'src/js');
 const sassLoaders = [
   'css-loader',
   'postcss-loader',
-  'sass-loader'
+  'resolve-url',
+  'sass-loader?sourceMap'
 ];
 
 const config = {
@@ -47,12 +48,12 @@ const config = {
       },
       {
         test: /\.(scss|css)$/,
-        loaders: debug ?
-        ["style", "css", "postcss", "sass"] : ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'))
+        loader: debug ?
+        "style!css!postcss!resolve-url!sass?sourceMap" : ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'))
       },
       {
-        test: /\.(jpg|png)$/,
-        loader: 'url?limit=25000'
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: "file-loader?name=images/[name].[ext]"
       },
       {
         test: /\.(html|ejs)$/,
@@ -66,7 +67,7 @@ const config = {
         loader: "url?limit=10000&mimetype=application/font-woff"
       },
       { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "file-loader"
+        loader: "file-loader?name=assets/[name].[ext]"
       },
       { test: /bootstrap[\/\\]dist[\/\\]js[\/\\]umd[\/\\]/, loader: 'imports?jQuery=jquery' },
     ]
@@ -138,7 +139,7 @@ const config = {
     })
   ],
   postcss: function () {
-    return [require('autoprefixer'), require('sorting')];
+    return [require('autoprefixer')];
   },
   resolve: {
     extensions: ['', '.js', '.scss'],
