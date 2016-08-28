@@ -13,7 +13,7 @@ const APP_DIR = path.resolve(__dirname, 'src/js');
 const sassLoaders = [
   'css-loader',
   'postcss-loader',
-  'sass-loader?includePaths[]=' + path.resolve(__dirname, './src')
+  'sass-loader'
 ];
 
 const config = {
