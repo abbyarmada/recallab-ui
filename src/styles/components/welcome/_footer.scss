@@ -1,0 +1,34 @@
+.welcome-footer {
+  @include clearfix();
+  border-top: 1px solid RGBA( 255, 255, 255, 0.1 );
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  width: 100%;
+  padding: 40px 0 0;
+  position: absolute;
+  height: 100px;
+  text-align: center;
+  z-index: 2;
+
+  a {
+    color: #9E9EA6;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: RGBA( 255, 255, 255, 0.5 );
+  }
+
+  a:hover {
+    color: RGBA( 255, 255, 255, 0.7 );
+  }
+
+  @include phone() {
+    position: fixed;
+
+    a {
+      color: #EAEAEA;
+    }
+  }
+}

@@ -1,11 +1,10 @@
-// =====================================================
-// ------------------ Megatype config ------------------
-// =====================================================
-// @author Thomas Bredin-Grey <tom@studiothick.com>
-// Megatype: https://github.com/StudioThick/megatype
-// =====================================================
-
-
+/* =====================================================
+ *------------------ Megatype config ------------------
+ * =====================================================
+ * @author Thomas Bredin-Grey <tom@studiothick.com>
+ * Megatype: https://github.com/StudioThick/megatype
+ * =====================================================
+ */
 
 // ===================================
 // Colors
@@ -13,14 +12,11 @@
 
 // colors
 $palettes: (
-    blue:           #169dbf,
-    white:          #ffffff,
-    black:          #000000
+  blue: #169DBF,
+  white: #FFFFFF,
+  black: #000000
 ) !default;
-
-$site-color-names: map-keys($palettes) !default;
-
-
+$site-color-names: map-keys( $palettes ) !default;
 
 // ===================================
 // Debugging
@@ -35,7 +31,7 @@ $debug-breakpoints: true !default;
 $debug-hover: true !default;
 
 // debug colors
-$debug-base: #f54848 !default;
+$debug-base: #F54848 !default;
 $debug-cap: yellow !default;
 $debug-spacing: turquoise !default;
 
@@ -48,8 +44,6 @@ $debug-opacity: 0.3 !default;
 // limit where baseline will report warnings
 $debug-tolerance: 1px;
 
-
-
 // ===================================
 // Breakpoints & Grid
 // ===================================
@@ -61,36 +55,36 @@ $baseline-scaling: false !default;
 // enable formal baseline grid
 // snaps all type to the baseline grid
 // for best results, declare spacing and leading using unitless numbers in typeset mixin
-// can be disabled per-typeset mixin by passing last paramter ($snap) as false
+// can be disabled per-typeset mixin by passing last paramter ( $snap ) as false
 $baseline-snap: true !default;
 
 // map for flexible retrieval of breakpoint info
 $breakpoint-map: (
-    0: (
-        start:      0px,
-        max:        420px,
-        rootsize:   12px
-    ),
-    1: (
-        start:      480px,
-        max:        560px,
-        rootsize:   14px
-    ),
-    2: (
-        start:      768px,
-        max:        840px,
-        rootsize:   16px
-    ),
-    3: (
-        start:      980px,
-        max:        1080px,
-        rootsize:   18px
-    ),
-    4: (
-        start:      1280px,
-        max:        1440px,
-        rootsize:   20px
-    )
+  0: (
+    start:      0px,
+    max:        420px,
+    rootsize:   12px
+  ),
+  1: (
+    start:      480px,
+    max:        560px,
+    rootsize:   14px
+  ),
+  2: (
+    start:      768px,
+    max:        840px,
+    rootsize:   16px
+  ),
+  3: (
+    start:      980px,
+    max:        1080px,
+    rootsize:   18px
+  ),
+  4: (
+    start:      1280px,
+    max:        1440px,
+    rootsize:   20px
+  )
 ) !default;
 
 // optional: set a minimum size for all typeset typography
@@ -100,7 +94,7 @@ $min-font-size: false !default;
 $type-measure: 40rem !default;
 
 // link offset from baseline
-$link-color: palette(blue) !default;
+$link-color: palette( blue ) !default;
 
 // link offset from baseline
 $link-offset: 2px !default;
@@ -111,21 +105,16 @@ $link-underline-opacity: 0.6 !default;
 // link underline hover opacity
 $link-underline-hover-opacity: 0.8 !default;
 
-
 // breakpoint count
-$breakpoint-count: length(map-keys($breakpoint-map)) !default;
+$breakpoint-count: length( map-keys( $breakpoint-map ) ) !default;
 
 // breakpoint names
-$breaks: map-keys($breakpoint-map) !default;
+$breaks: map-keys( $breakpoint-map ) !default;
 
 // set the initial breakpoint information referenced by type mixins
 // you can use these to retrieve current breakpoint info within breakpoint mixins
 $current-breakpoint: 0 !default;
-$current-rootsize: map-get(map-get($breakpoint-map, 0), rootsize) !default;
-
-
-
-
+$current-rootsize: map-get( map-get( $breakpoint-map, 0 ), rootsize ) !default;
 
 // ===================================
 // Typefaces
@@ -136,21 +125,11 @@ $current-rootsize: map-get(map-get($breakpoint-map, 0), rootsize) !default;
 // Georgia: 0.66, Times / Times New Roman: 0.65, Palatino: 0.52
 // Lucida Grande: 0.72, Helvetica: 0.65, Helvetica Neue: 0.71, Verdana: 0.76, Tahoma: 0.76
 $sans: (
-    font-family: '"Helvetica Neue", Arial, sans-serif',
-    regular: normal,
-    bold: bold,
-    cap-height: 0.71
+  font-family: '"Helvetica Neue", Arial, sans-serif', regular: normal, bold: bold, cap-height: 0.71
 ) !default;
-
 $serif: (
-    font-family: 'Georgia, serif',
-    regular: normal,
-    bold: bold,
-    cap-height: 0.66
+  font-family: 'Georgia, serif', regular: normal, bold: bold, cap-height: 0.66
 ) !default;
-
 $monospace: (
-    font-family: 'Menlo, Courier, monospace',
-    regular: 400,
-    cap-height: 0.68
+  font-family: 'Menlo, Courier, monospace', regular: 400, cap-height: 0.68
 ) !default;

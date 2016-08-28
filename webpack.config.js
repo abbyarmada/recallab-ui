@@ -13,7 +13,7 @@ const APP_DIR = path.resolve(__dirname, 'src/js');
 const sassLoaders = [
   'css-loader',
   'postcss-loader',
-  'sass-loader'
+  'sass-loader?includePaths[]=' + path.resolve(__dirname, './src')
 ];
 
 const config = {
@@ -47,7 +47,8 @@ const config = {
       },
       {
         test: /\.(scss|css)$/,
-        loader: debug ? "style!css!sass" : ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'))
+        loaders: debug ?
+        ["style", "css", "postcss", "sass"] : ExtractTextPlugin.extract('style-loader', sassLoaders.join('!'))
       },
       {
         test: /\.(jpg|png)$/,
@@ -63,23 +64,17 @@ const config = {
       }, {
         test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
         loader: "url?limit=10000&mimetype=application/font-woff"
-      }, {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url?limit=10000&mimetype=application/octet-stream"
-      }, {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "file"
-      }, {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url?limit=10000&mimetype=image/svg+xml"
-      }, // Bootstrap 4
+      },
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "file-loader"
+      },
       { test: /bootstrap[\/\\]dist[\/\\]js[\/\\]umd[\/\\]/, loader: 'imports?jQuery=jquery' },
     ]
   },
   output: {
     filename: 'bundle.min.js',
     path: path.join(__dirname, './build/')
-    // publicPath: '/build/'
+    // publicPath: './build/'
   },
   plugins: debug ?
   [
@@ -142,11 +137,9 @@ const config = {
       }
     })
   ],
-  postcss: [
-    autoprefixer({
-      browsers: ['last 2 versions']
-    })
-  ],
+  postcss: function () {
+    return [require('autoprefixer'), require('sorting')];
+  },
   resolve: {
     extensions: ['', '.js', '.scss'],
     root: [path.join(__dirname, './src/**'), './node_modules/**']

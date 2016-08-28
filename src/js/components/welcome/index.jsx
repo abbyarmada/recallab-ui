@@ -7,6 +7,7 @@ import { withRouter, Link } from 'react-router';
 import queryString from 'query-string';
 import axios from 'axios';
 import config from '../../config';
+import Footer from './footer.jsx';
 
 class Welcome extends React.Component {
   componentWillMount() {
@@ -24,10 +25,20 @@ class Welcome extends React.Component {
     const { dispatch } = this.props;
     return (
       <div>
-        <Login
-          onLoginClick={() => dispatch(login())}
-        />
-        <Link to="/deck">Decks</Link>
+        <div id="wrapper">
+          <div>
+            <Login
+              onLoginClick={() => dispatch(login())}
+            />
+          </div>
+          <div className="cover">
+            <div className="message">Knowledge is power.</div>
+            <Footer>
+              <Link to="/about">About</Link>
+            </Footer>
+          </div>
+          <div className="gradient"></div>
+        </div>
       </div>
     );
   }

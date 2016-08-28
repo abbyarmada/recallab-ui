@@ -1,0 +1,85 @@
+#wrapper {
+  $wrapperBG: RGBA( 0, 0, 0, 0.3 );
+  $messageShadow: RGBA( 0, 0, 0, 0.4 );
+
+  @include clearfix(  );
+  @import '_footer.scss';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-shadow: 0 0 1px RGBA( 0, 0, 0, 0.1 );
+  color: #FFFFFF;
+  font-family: 'Lato';
+  background: linear-gradient( $wrapperBG, $wrapperBG );
+
+  .login-button {
+    position: absolute;
+    right: 40px;
+    top: 16px;
+    z-index: 2;
+  }
+
+  .message {
+    filter: drop-shadow( 0 2px 5px  $messageShadow );
+    font-size: 3.61rem;
+    line-height: 4.46rem;
+    font-weight: 900;
+    text-align: center;
+    display: block;
+    position: relative;
+    transform-origin: center bottom;
+    background: transparent;
+    padding-top: 200px;
+  }
+
+  .cover {
+    background-size: cover;
+    position: relative;
+    background-position: center;
+    box-shadow: inset 0 -255px 680px -160px RGBA( 0, 0, 0, 0.4 ), inset 0 153px 136px -85px RGBA( 0, 0, 0, 0.5 );
+    background-image: linear-gradient( RGBA( 0, 0, 0, 0.3 ), RGBA( 0, 0, 0, 0.3 ) ), url( '/src/images/learning.jpg' );
+    background-repeat: no-repeat;
+    height: calc( 100vh );
+    max-height: inherit;
+    width: 100%;
+  }
+
+  .gradient {
+    background: linear-gradient( to bottom, RGBA( 0, 0, 0, 0 ) 0, #000000 67% );
+    height: 600px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+  }
+
+  @include tablet() {
+
+    .gradient {
+      height: 360px;
+    }
+  }
+
+  @include phone() {
+
+    .gradient {
+      display: none;
+    }
+
+    .cover {
+      height: calc( 100vh );
+    }
+
+    .message {
+      font-size: 2em;
+      font-weight: 500;
+      padding-top: 200px;
+    }
+  }
+
+  @include phone() {
+    height: 300px;
+  }
+}

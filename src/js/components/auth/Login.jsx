@@ -6,11 +6,10 @@ export default class Login extends Component {
   }
   render() {
     return (
-      <div>
-        <button onClick={(event) => this.handleClick(event)} className="btn btn-primary">
-          Login
+      <div className="login-button">
+        <button onClick={(event) => this.handleClick(event)} className="button button-borderless">
+          <i className="fa fa-sign-in"></i> Sign In
         </button>
-
       </div>
     );
   }

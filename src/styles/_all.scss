@@ -1,8 +1,9 @@
-@import "bourbon";
-@import "megatype";
-@import "normalize/import-now";
-@import "config/_config.scss";
-@import "components/_all.scss";
+@import 'bourbon';
+@import 'megatype';
+@import 'general/_all.scss';
+@import 'normalize/import-now';
+@import 'config/_config.scss';
+@import 'components/_all.scss';
 
 $background-color-one: #685092;
 $background-color-two: #FFE0B2;
@@ -10,26 +11,35 @@ $background-color-three: #FF9E80;
 $background-color-four: #FF8A80;
 $background-color-five: #1A237E;
 $text-color-dark: #383838;
-$text-color-light: #f7f7f7;
-$font-stack: Roboto, "San Francisco", Helvetica, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$text-color-light: #F7F7F7;
+$font-stack: Roboto, 'San Francisco', 'Helvetica', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 
 h1 {
-   font-size: golden-ratio(14px,  1);
+  font-size: golden-ratio( 14px, 1 );
 }
 
 body {
   height: 100%;
   overflow: hidden;
   font-family: $font-stack;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
 }
 
-.clearfix:before,
-.clearfix:after {
-  content: "";
+.clearfix::before, .clearfix::after {
+  content: '';
   display: table;
 }
 
-.clearfix:after {
+.clearfix::after {
   clear: both;
 }
 

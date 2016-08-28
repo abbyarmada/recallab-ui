@@ -1,12 +1,12 @@
 .card-controlls {
   position: absolute;
-  bottom: 15px;
-  width: 145px;
-  border: 1px solid black;
-  height: 30px;
-  left: 0;
   right: 0;
+  bottom: 15px;
+  left: 0;
   margin: auto;
+  width: 145px;
+  height: 30px;
+  border: 1px solid black;
 }
 
 .card-previous {
@@ -19,6 +19,6 @@
 
 .card-show-answer {
   display: inline-block;
-  margin-left: 20px;
   margin-right: 20px;
+  margin-left: 20px;
 }
