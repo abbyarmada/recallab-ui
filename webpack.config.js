@@ -99,7 +99,7 @@ const config = {
         // Since extract-text-webpack-plugin is used to separate the css
         // we can toggle between true/false here to help with reloading html + css changes
         // webpack hot reloading doesn't work with extracted css/sourcemaps/sass
-        reload: false
+        reload: true
       }
     ),
     new webpack.ProvidePlugin({

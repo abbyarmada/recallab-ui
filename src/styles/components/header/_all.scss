@@ -1,6 +1,29 @@
 #header {
   border-bottom: 1px solid black;
   padding-bottom: 10px;
-  background-color: #F6F6F7;
-  color: #383838;
+  background-color: $header-bg;
+  color: #FFFFFF;
+  height: 40px;
+  box-shadow: 0px 0 8px 0px black;
+}
+
+#header-logo {
+  background-image: url('../../../images/recallab-flask.png');
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  background-size: cover;
+  margin-left: 19px;
+  margin-top: 4px;
+  opacity: 0.8;
+  float: left;
+}
+
+.header-separator {
+  background-color: $primary-color;
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  left: 80px;
+  opacity: 0.1;
 }

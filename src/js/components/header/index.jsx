@@ -5,7 +5,8 @@ class Header extends React.Component {
   render() {
     return (
       <div id="header" className="clearfix">
-        <UserBadge />
+        <div id="header-logo"></div>
+        <div className="header-separator"></div>
       </div>
     );
   }

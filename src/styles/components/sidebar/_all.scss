@@ -1,9 +1,9 @@
 #sidebar {
   border-right: 1px solid black;
-  width: 60px;
+  width: 80px;
   height: 100%;
   position: absolute;
   left: 0;
-  background-color: #685092;
+  background-color: $sidebar-bg;
   color: #F6F6F7;
 }
