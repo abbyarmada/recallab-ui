@@ -12,14 +12,22 @@ const fetchedDecks = (state, action) => {
   });
 };
 
-function user(state = {}, action) {
+function user(state = {
+  isAuthenticated: localStorage.getItem('id_token') ? true : false,
+  idToken: localStorage.getItem('id_token'),
+  tokenType: localStorage.getItem('tokenType')
+}, action) {
   switch (action.type) {
-    case LOCK_SUCCESS:
+    case LOCK_SUCCESS: {
+      localStorage.setItem('id_token', action.idToken);
+      localStorage.setItem('tokenType', action.tokenType);
       return Object.assign({}, state, {
         accessToken: action.accessToken,
         idToken: action.idToken,
-        tokenType: action.tokenType
+        tokenType: action.tokenType,
+        isAuthenticated: true
       });
+    }
     case LOGOUT_SUCCESS:
       return Object.assign({}, state, {
         isFetching: true,
