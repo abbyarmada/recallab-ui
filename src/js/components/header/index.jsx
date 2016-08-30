@@ -6,8 +6,6 @@ class Header extends React.Component {
   render() {
     return (
       <div id="header" className="clearfix">
-        <Link to="/home"><div id="header-logo"></div></Link>
-        <div className="header-separator"></div>
       </div>
     );
   }

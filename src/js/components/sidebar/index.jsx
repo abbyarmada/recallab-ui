@@ -10,9 +10,13 @@ class Sidebar extends React.Component {
 
     return (
       <div id="sidebar" className="clearfix">
+        <Link to="/home"><div id="header-logo"></div></Link>
+        <hr />
         <div className="menu">
           <div className="item">
-            <Link to="/deck"><i className="fa fa-th-large" aria-hidden="true"></i></Link>
+            <Link to="/deck"><i className="fa fa-th-large" aria-hidden="true"></i>
+              Decks
+            </Link>
           </div>
         </div>
         <div className="logout">
@@ -23,7 +27,7 @@ class Sidebar extends React.Component {
               this.context.router.push('/');
             }}
           >
-            <i className="fa fa-sign-out" aria-hidden="true"></i></a>
+            <i className="fa fa-sign-out" aria-hidden="true"></i>Sign out</a>
         </div>
       </div>
     );

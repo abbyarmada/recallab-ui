@@ -6,8 +6,8 @@ class Shell extends React.Component {
   render() {
     return (
       <div>
-        <Header />
         <Sidebar />
+        <Header />
         {this.props.children}
       </div>
     );

@@ -1,2 +1,5 @@
 @import '_colors.scss';
 @import '_config.scss';
+
+$sidebar-width: 220px;
+$content-wrapper-left: $sidebar-width + 10;
