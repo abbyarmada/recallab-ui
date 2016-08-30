@@ -1,5 +1,6 @@
 import Auth0Lock from 'auth0-lock';
 import config from '../config';
+import { Router } from 'react-router';
 
 // There are two possible states for our login
 // process and we need actions for each of them.
@@ -60,8 +61,9 @@ function receiveLogout() {
 // Logs the user out
 export function logoutUser() {
   return dispatch => {
-    dispatch(requestLogout());
+    // dispatch(requestLogout());
     localStorage.removeItem('id_token');
-    dispatch(receiveLogout());
+    localStorage.removeItem('tokenType');
+    // dispatch(receiveLogout());
   };
 }

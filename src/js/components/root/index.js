@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
-import Header from '../header/index.jsx';
-import Sidebar from '../sidebar/index.jsx';
 import Card from '../card/index.jsx';
 import Decks from '../deck/all/index.jsx';
 import DeckEdit from '../deck/single/edit.jsx';

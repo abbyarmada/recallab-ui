@@ -6,4 +6,29 @@
   left: 0;
   background-color: $sidebar-bg;
   color: #F6F6F7;
+
+  .menu {
+    margin-top: 80px;
+    margin-bottom: 80px;
+
+    a {
+      color: #FFFFFF;
+    }
+
+    .item {
+      font-size: 2em;
+      text-align: center;
+    }
+
+  }
+
+  a {
+    cursor: pointer;
+    cursor: hand;
+  }
+
+  .logout {
+    font-size: 2em;
+    text-align: center;
+  }
 }
