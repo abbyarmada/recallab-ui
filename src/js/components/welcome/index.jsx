@@ -11,16 +11,18 @@ import Footer from './footer.jsx';
 
 class Welcome extends React.Component {
   componentWillMount() {
+    axios.defaults.baseURL = config.api_url;
+
     if (localStorage.getItem('id_token')) {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('id_token')}`;
       this.context.router.push('/home');
     }
     const { dispatch } = this.props;
     if (location.hash) {
       const parsed = queryString.parse(location.hash);
       dispatch(lockSuccess(parsed.access_token, parsed.id_token, parsed.token_type));
-      this.context.router.push('/home');
-      axios.defaults.baseURL = config.api_url;
       axios.defaults.headers.common['Authorization'] = `Bearer ${parsed.id_token}`;
+      this.context.router.push('/home');
     }
   }
 
