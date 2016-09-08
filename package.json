@@ -77,7 +77,7 @@
     "nodemon": "^1.10.2",
     "normalize-scss": "^5.0.3",
     "normalizr": "^2.2.1",
-    "postcss-loader": "^0.12.0",
+    "postcss-loader": "^0.13.0",
     "query-string": "^4.2.3",
     "raw-loader": "^0.5.1",
     "react": "^15.2.1",
