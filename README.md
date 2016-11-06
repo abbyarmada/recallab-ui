@@ -14,9 +14,9 @@ Configuration values a passed from environment variables, you will need to provi
 * `RECALLAB_API_URL`
 
 
-`npm install`
+`yarn install`
 
-`npm run dev` (more commands in `scripts` in package.json)
+`yarn run dev` (more commands in `scripts` in package.json)
 
 
 # Attributions
