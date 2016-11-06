@@ -2252,7 +2252,7 @@ eslint-module-utils@^1.0.0:
     debug "2.2.0"
     pkg-dir "^1.0.0"
 
-eslint-plugin-import@^2.0.0:
+eslint-plugin-import:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.1.0.tgz#20fe254aa7dac0d9fe617979f14b59f0f762e1b4"
   dependencies:
@@ -3224,7 +3224,7 @@ interpret@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.1.tgz#d579fb7f693b858004947af39fa0db49f795602c"
 
-invariant@^2.0.0, invariant@^2.2.0, invariant@^2.2.1:
+invariant@^2.0.0, invariant@^2.2.0, invariant@^2.2.1, invariant@~2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.1.tgz#b097010547668c7e337028ebe816ebe36c8a8d54"
   dependencies:
@@ -5031,11 +5031,12 @@ react-helmet@^3.1.0:
     shallowequal "0.2.2"
     warning "3.0.0"
 
-react-redux-form@^0.14.4:
-  version "0.14.6"
-  resolved "https://registry.yarnpkg.com/react-redux-form/-/react-redux-form-0.14.6.tgz#c237c71f1155316fa1a2478af536b1673e3af7f5"
+react-redux-form:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-redux-form/-/react-redux-form-1.2.2.tgz#138d1d4229d8cb2f6e62d7088c112edf2cd83956"
   dependencies:
     icepick "^1.1.0"
+    invariant "~2.2.1"
     lodash "^4.10.0"
 
 react-redux@^4.4.5:
