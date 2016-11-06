@@ -2,6 +2,7 @@
 
 [![Build Status](https://semaphoreci.com/api/v1/thracian/recallab-ui/branches/master/badge.svg)](https://semaphoreci.com/thracian/recallab-ui)
 [![David Dependencies](https://david-dm.org/stefan-vatov/recallab-ui.svg)](https://david-dm.org/stefan-vatov/recallab-ui)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 # Instructions
 
@@ -13,7 +14,7 @@ Configuration values a passed from environment variables, you will need to provi
 * `RECALLAB_API_URL`
 
 
-`npm install` 
+`npm install`
 
 `npm run dev` (more commands in `scripts` in package.json)
 
