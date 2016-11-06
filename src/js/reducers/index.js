@@ -5,6 +5,7 @@ import { routerReducer } from 'react-router-redux';
 import {
   LOCK_SUCCESS, LOGOUT_SUCCESS
 } from '../actions/auth.js';
+import { objectToArray } from '../util/array';
 
 const fetchedDecks = (state, action) => {
   return Object.assign({}, state, {
@@ -42,6 +43,8 @@ function decks(state = [], action) {
   switch (action.type) {
     case ActionTypes.FETCH_DECKS_SUCCESS:
       return fetchedDecks(state, action);
+    case ActionTypes.SAVED_DECK_SUCCESS:
+      return fetchedDecks(state, action);
 
     default:
       return state;
@@ -56,4 +59,4 @@ const recallab = combineReducers({
 
 export default recallab;
 
-export const getDecks = (state) => state.decks;
+export const getDecks = (state) => objectToArray(state.decks);

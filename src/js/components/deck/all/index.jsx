@@ -6,24 +6,26 @@ import Deck from './deck.jsx';
 import * as api from '../../../api/index.js';
 
 class Decks extends React.Component {
-  componentDidMount() {
+  componentDidMount(dispatch) {
     this.fetchData();
   }
 
   fetchData() {
-    api.fetchDecks();
+    this.props.dispatch(api.fetchDecks());
   }
 
   render() {
     return (
       <div className="decks clearfix">
+        <Link to="/deck/new"><button className="button ">New Deck</button></Link>
         <h1>Your decks:</h1>
         <ul>
-        {this.props.decks.map(deck =>
-          <Deck
+        {this.props.decks.map(deck => {
+          return <Deck
             key = {deck.id}
             {...deck}
           />
+          }
         )}
         </ul>
         {this.props.children}

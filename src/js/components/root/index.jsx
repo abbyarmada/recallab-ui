@@ -32,12 +32,11 @@ class Root extends React.Component {
           <Route component={Authenticated}>
             <Route path="/home" component={App}>
               {/* add the routes here */}
-              <Route path="/deck" component={Decks}>
-                <Route path="/deck/:deckId" component={DeckView} />
-                <Route path="/deck/edit/:deckId" component={DeckEdit} />
-              </Route>
-              <Route path="/card/:id" component={Card}>
-              </Route>
+              <Route path="/deck" component={Decks} />
+              <Route path="/deck/view/:deckId" component={DeckView} />
+              <Route path="/deck/new" component={DeckEdit} />
+              <Route path="/deck/edit/:deckId" component={DeckEdit} />
+              <Route path="/card/:id" component={Card} />
             </Route>
           </Route>
         </Router>

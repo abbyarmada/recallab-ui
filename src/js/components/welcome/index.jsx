@@ -8,6 +8,7 @@ import queryString from 'query-string';
 import axios from 'axios';
 import config from '../../config';
 import Footer from './footer.jsx';
+import * as api from '../../api/index';
 
 class Welcome extends React.Component {
   componentWillMount() {
@@ -15,6 +16,7 @@ class Welcome extends React.Component {
 
     if (localStorage.getItem('id_token')) {
       axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('id_token')}`;
+      api.ping();
       this.context.router.push('/home');
     }
     const { dispatch } = this.props;
@@ -22,6 +24,7 @@ class Welcome extends React.Component {
       const parsed = queryString.parse(location.hash);
       dispatch(lockSuccess(parsed.access_token, parsed.id_token, parsed.token_type));
       axios.defaults.headers.common['Authorization'] = `Bearer ${parsed.id_token}`;
+      api.ping();
       this.context.router.push('/home');
     }
   }

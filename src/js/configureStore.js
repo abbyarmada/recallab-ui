@@ -11,13 +11,14 @@ const configureStore = () => {
   middlewares.push(routingMiddleware);
   if (process.env.NODE_ENV !== 'production') {
     middlewares.push(createLogger());
-  }
+  };
+
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
   return createStore(
     recallab,
-    compose(
-      applyMiddleware(...middlewares),
-      window.devToolsExtension ? window.devToolsExtension() : f => f
+    composeEnhancers(
+      applyMiddleware(...middlewares)
     )
   );
 };
