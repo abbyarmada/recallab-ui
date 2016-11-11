@@ -21,29 +21,23 @@ const UserIsAuthenticated = UserAuthWrapper({
 
 const Authenticated = UserIsAuthenticated((props) => props.children);
 
-class Root extends React.Component {
-  render() {
-    const { store } = this.props;
-    const history = syncHistoryWithStore(browserHistory, store);
-    return (
-      <Provider store={store}>
-        <Router history={history}>
-          <Route path="/" component={Welcome} />
-          <Route component={Authenticated}>
-            <Route path="/home" component={App}>
-              {/* add the routes here */}
-              <Route path="/deck" component={Decks} />
-              <Route path="/deck/view/:deckId" component={DeckView} />
-              <Route path="/deck/new" component={DeckEdit} />
-              <Route path="/deck/edit/:deckId" component={DeckEdit} />
-              <Route path="/card/:id" component={Card} />
-            </Route>
-          </Route>
-        </Router>
-      </Provider>
-    );
-  }
-}
+const Root = (props) => (
+  <Provider store={props.store}>
+    <Router history={syncHistoryWithStore(browserHistory, props.store)}>
+      <Route path="/" component={Welcome} />
+      <Route component={Authenticated}>
+        <Route path="/home" component={App}>
+          {/* add the routes here */}
+          <Route path="/deck" component={Decks} />
+          <Route path="/deck/view/:deckId" component={DeckView} />
+          <Route path="/deck/new" component={DeckEdit} />
+          <Route path="/deck/edit/:deckId" component={DeckEdit} />
+          <Route path="/card/:id" component={Card} />
+        </Route>
+      </Route>
+    </Router>
+  </Provider>
+);
 
 Root.propTypes = {
   store: PropTypes.object.isRequired,

@@ -8,7 +8,7 @@ export const fetchDecks = () => (dispatch, getState) => {
     })
     .catch((response) => {
 
-    })
+    });
 };
 
 export const saveDeck = (deck) => (

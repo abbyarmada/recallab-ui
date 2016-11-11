@@ -1,5 +1,4 @@
 var debug = process.env.NODE_ENV !== "production";
-const autoprefixer = require('autoprefixer');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -7,8 +6,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const bourbon = require('node-bourbon').includePaths;
 const bourbonNeat = require('bourbon-neat').includePaths;
-
-const APP_DIR = path.resolve(__dirname, 'src/js');
 
 const sassLoaders = [
   'css-loader',
@@ -138,9 +135,9 @@ const config = {
       }
     })
   ],
-  postcss: function () {
-    return [require('autoprefixer')];
-  },
+  postcss: () => [
+    require('autoprefixer')
+  ],
   resolve: {
     extensions: ['', '.js', '.scss'],
     root: [path.join(__dirname, './src/**'), './node_modules/**']

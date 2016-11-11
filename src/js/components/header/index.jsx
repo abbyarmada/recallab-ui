@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Header = () => (
-  <div id="header" className="clearfix">
-  </div>
+  <div id="header" className="clearfix" />
 );
 
 export default Header;
