@@ -2,6 +2,7 @@
 
 [![Build Status](https://semaphoreci.com/api/v1/thracian/recallab-ui/branches/master/badge.svg)](https://semaphoreci.com/thracian/recallab-ui)
 [![David Dependencies](https://david-dm.org/stefan-vatov/recallab-ui.svg)](https://david-dm.org/stefan-vatov/recallab-ui)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3635b53bf5ef4203803eb6d9cd380c35)](https://www.codacy.com/app/thracian/recallab-ui?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=stefan-vatov/recallab-ui&amp;utm_campaign=Badge_Grade)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 # Instructions
