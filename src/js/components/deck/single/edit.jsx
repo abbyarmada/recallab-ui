@@ -18,22 +18,16 @@ function Submit(e) {
   return false;
 }
 
-class DeckEdit extends React.Component {
-
-  render() {
-
-    return (
-      <div className="deck-edit clearfix">
-        <form >
-          <label htmlFor="deckName" >
-            Deck name:
-            <input type="text" name="deckName" value={deck.name} onChange={updateField} />
-          </label>
-          <div className="button" onClick={Submit}>Submit</div>
-        </form>
-      </div>
-    );
-  }
-}
+const DeckEdit = () => (
+  <div className="deck-edit clearfix">
+    <form >
+      <label htmlFor="deckName" >
+        Deck name:
+        <input type="text" name="deckName" value={deck.name} onChange={updateField} />
+      </label>
+      <div className="button" onClick={Submit}>Submit</div>
+    </form>
+  </div>
+);
 
 export default DeckEdit;

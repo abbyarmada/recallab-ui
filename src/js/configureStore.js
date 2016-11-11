@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
-import recallab from './reducers/index';
 import { routerMiddleware } from 'react-router-redux';
 import { browserHistory } from 'react-router';
+import recallab from './reducers/index';
 
 const configureStore = () => {
   const middlewares = [thunk];

@@ -1,13 +1,13 @@
 import React from 'react';
 
-class Footer extends React.Component {
-  render() {
-    return (
-      <div className="welcome-footer">
-        {this.props.children}
-      </div>
-    );
-  }
-}
+const Footer = (props) => (
+  <div className="welcome-footer">
+    {props.children}
+  </div>
+);
+
+Footer.propTypes = {
+  children: React.PropTypes.node
+};
 
 export default Footer;

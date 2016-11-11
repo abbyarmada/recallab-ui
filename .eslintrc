@@ -6,7 +6,8 @@
 {
   "extends": "airbnb",
   "env": {
-    "mocha": true
+    "mocha": true,
+    "browser": true
   },
   "rules": {
     "max-len": [1, 120, 2, { "ignoreComments": true }],
@@ -40,6 +41,10 @@
       "always"
     ],
     "no-console": 0,
-    "import/no-unresolved": 0
+    "import/no-unresolved": 0,
+    "react/require-extension": 0,
+    "import/extensions": 0,
+    "react/forbid-prop-types": 0,
+    "no-class-assign": 0
   }
 }

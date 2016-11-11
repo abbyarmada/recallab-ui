@@ -8,7 +8,7 @@ export default class Login extends Component {
     return (
       <div className="login-button">
         <button onClick={(event) => this.handleClick(event)} className="button button-borderless">
-          <i className="fa fa-sign-in"></i> Sign In
+          <i className="fa fa-sign-in" /> Sign In
         </button>
       </div>
     );
@@ -16,6 +16,5 @@ export default class Login extends Component {
 }
 
 Login.propTypes = {
-  onLoginClick: PropTypes.func.isRequired,
-  errorMessage: PropTypes.string
+  onLoginClick: PropTypes.func.isRequired
 };

@@ -1,17 +1,16 @@
-import * as ActionTypes from '../constants/ActionTypes';
-import { fetchDecks } from '../api/index';
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
+import * as ActionTypes from '../constants/ActionTypes';
 import {
   LOCK_SUCCESS, LOGOUT_SUCCESS
 } from '../actions/auth.js';
 import { objectToArray } from '../util/array';
 
-const fetchedDecks = (state, action) => {
-  return Object.assign({}, state, {
+const fetchedDecks = (state, action) => (
+  Object.assign({}, state, {
     ...action.response
-  });
-};
+  })
+);
 
 function user(state = {
   isAuthenticated: localStorage.getItem('id_token') ? true : false,
@@ -33,7 +32,7 @@ function user(state = {
       return Object.assign({}, state, {
         isFetching: true,
         isAuthenticated: false
-      })
+      });
 
     default:
       return state;

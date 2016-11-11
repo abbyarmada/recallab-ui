@@ -20,12 +20,9 @@ class Decks extends React.Component {
         <Link to="/deck/new"><button className="button ">New Deck</button></Link>
         <h1>Your decks:</h1>
         <ul>
-        {this.props.decks.map(deck => {
-          return <Deck
-            key = {deck.id}
-            {...deck}
-          />
-          }
+          {this.props.decks.map((deck) => (
+            <Deck key={deck.id} {...deck} />
+          )
         )}
         </ul>
         {this.props.children}
@@ -41,8 +38,8 @@ const mapStateToProps = (state) => ({
 Decks.propTypes = {
   decks: PropTypes.array.isRequired,
   children: PropTypes.node,
+  dispatch: PropTypes.func.isRequired
 };
-
 
 Decks = withRouter(connect(
   mapStateToProps

@@ -1,12 +1,11 @@
-import React, { Component, PropTypes } from 'react';
-import { login, logoutUser, lockSuccess } from '../../actions/auth';
-import Login from '../auth/Login.jsx';
-import Logout from '../auth/Logout.jsx';
+import React, { PropTypes } from 'react';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router';
 import queryString from 'query-string';
-import axios from 'axios';
 import config from '../../config';
+import { login, lockSuccess } from '../../actions/auth';
+import Login from '../auth/Login.jsx';
 import Footer from './footer.jsx';
 import * as api from '../../api/index';
 
@@ -15,7 +14,7 @@ class Welcome extends React.Component {
     axios.defaults.baseURL = config.api_url;
 
     if (localStorage.getItem('id_token')) {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('id_token')}`;
+      axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('id_token')}`;
       api.ping();
       this.context.router.push('/home');
     }
@@ -23,7 +22,7 @@ class Welcome extends React.Component {
     if (location.hash) {
       const parsed = queryString.parse(location.hash);
       dispatch(lockSuccess(parsed.access_token, parsed.id_token, parsed.token_type));
-      axios.defaults.headers.common['Authorization'] = `Bearer ${parsed.id_token}`;
+      axios.defaults.headers.common.Authorization = `Bearer ${parsed.id_token}`;
       api.ping();
       this.context.router.push('/home');
     }
@@ -45,7 +44,7 @@ class Welcome extends React.Component {
               <Link to="/about">About</Link>
             </Footer>
           </div>
-          <div className="gradient"></div>
+          <div className="gradient" />
         </div>
       </div>
     );

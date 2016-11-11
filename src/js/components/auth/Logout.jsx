@@ -1,19 +1,10 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import { logoutUser } from '../../actions/auth.js';
 
-export default class Logout extends Component {
+const Logout = () => (
+  <button onClick={() => logoutUser()} className="btn btn-primary">
+    Logout
+  </button>
+);
 
-  render() {
-    const { onLogoutClick } = this.props;
-
-    return (
-      <button onClick={() => logoutUser()} className="btn btn-primary">
-        Logout
-      </button>
-    );
-  }
-}
-
-Logout.propTypes = {
-  onLogoutClick: PropTypes.func.isRequired
-};
+export default Logout;

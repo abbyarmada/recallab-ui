@@ -1,13 +1,13 @@
 import React from 'react';
 
-class ContentWrapper extends React.Component {
-  render() {
-    return (
-      <div id="content-wrapper" className="clearfix">
-        {this.props.children}
-      </div>
-    );
-  }
-}
+const ContentWrapper =(props) => (
+  <div id="content-wrapper" className="clearfix">
+    {props.children}
+  </div>
+);
+
+ContentWrapper.propTypes = {
+  children: React.PropTypes.node
+};
 
 export default ContentWrapper;
